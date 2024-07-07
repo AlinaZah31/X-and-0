@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X and 0</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+            grid-template-rows: repeat(3, 1fr); /* Create 3 equal rows */
+        }
+        .grid-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+  <h1 id="Initial-text">Let's play X and 0</h1>
+    <div class="grid-container">
+        <div class="grid-item 1" id="1">One</div>
+        <div class="grid-item 2" id="2">Two</div>
+        <div class="grid-item 3" id="3">Three</div>
+        <div class="grid-item 4" id="4">Four</div>
+        <div class="grid-item 5" id="5">Five</div>
+        <div class="grid-item 6" id="6">Six</div>
+        <div class="grid-item 7" id="7">Seven</div>
+        <div class="grid-item 8" id="8">Eight</div>
+        <div class="grid-item 9" id="9">Nine</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
