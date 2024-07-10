@@ -1,31 +1,21 @@
-function shuffleArray (array) { 
-    for (let i = 8; i > 0; --i) { 
-        const j = Math.floor (Math.random () * (i + 1)); 
-        [array [i], array [j]] = [array [j], array [i]]; 
-    } 
-    return array; 
-}
-
-array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-array = shuffleArray(array);
-let stringX = "", string0 = "";
-let weHaveWinner = 0;
 letsPlay();
 
-function letsPlay() { 
-    weHaveWinner = 0;
-    for (let i = 0; i < 9 && weHaveWinner == 0; ++i) {
-        if (i % 2 != 0) {
-            stringX += array[i];
-            document.getElementById(array[i]).innerHTML = "X";
-            document.getElementById(array[i]).style.color = "Red";
-            displayResults(stringX, 'X');
-        } else {
-            document.getElementById(array[i]).innerHTML = "0";
-            document.getElementById(array[i]).style.color = "Blue";
-            string0 += array[i];
-            displayResults(string0, '0');
-        }
+function letsPlay() {
+    let arrayX = "", array0 = "";
+
+    for (let i = 1; i <= 9; ++i) {
+        let option = document.getElementById(i);
+        option.addEventListener("input", function(event){
+            if (option.innerHTML == 'x') {
+                arrayX += i; 
+                //console.log("arrayX: " + arrayX);
+                displayResults(arrayX, 'x');
+            } else if (option.innerHTML == '0') {
+                array0 += i; 
+                //console.log("array0: " + array0);
+                displayResults(array0, '0');
+            }
+        })
     }
 }
 
@@ -42,5 +32,3 @@ function displayResults(string, winnerValue) {
         weHaveWinner = 1;
     }
 }
-
-
