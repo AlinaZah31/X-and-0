@@ -1,3 +1,4 @@
+let weHaveWinner = 0;
 letsPlay();
 
 function letsPlay() {
@@ -16,6 +17,9 @@ function letsPlay() {
                 displayResults(array0, '0');
             }
         })
+    }
+    if (weHaveWinner == 0) {
+        document.getElementById("Initial-text").innerHTML = "NO WINNER";
     }
 }
 
