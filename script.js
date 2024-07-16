@@ -2,6 +2,23 @@ let prevOption = "X";
 let arrayX = "", array0 = "";
 let weHaveWinner = 0;
 
+generateButtons();
+
+function generateButtons() {
+    for (let i = 1; i <= 9; ++i) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.innerText = " - ";
+        button.id = i;
+        document.body.appendChild(button);
+        button.onclick = "this.disabled=true";
+        button.onclick = function() {changeValue(i); this.disabled=true;}
+        if (i % 3 == 0 ) {
+            document.body.appendChild(document.createElement("br"));
+        }  
+    } 
+}
+
 function changeValue(idBtn) {   
     let currentBtn = document.getElementById(idBtn);
     if (prevOption == "X") {
